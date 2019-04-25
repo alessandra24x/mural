@@ -1,0 +1,19 @@
+<svg width="38" height="38" xmlns="http://www.w3.org/2000/svg">
+	<g id="Page" fill="none" fillRule="evenodd">
+		<g id="Artboard" transform="translate(-59 -74)" stroke="#4A4A4A">
+			<g id="Group-3">
+				<g id="formats-tiles" transform="translate(18 34)">
+					<g id="1x-horizontal" transform="translate(0 9)">
+						<g id="Group-5" transform="translate(41 31)">
+							<path d="M36.705 1.295h-5.182" id="Line-3" stroke-linecap="square"/>
+							<path d="M36.705 1.295v5.182" id="Line-2" stroke-linecap="square"/>
+							<path d="M1.295 36.705l35.41-35.41" id="Line" stroke-linecap="round"/>
+							<path d="M1.295 36.705h5.182" id="Line-4" stroke-linecap="square"/>
+							<path d="M1.295 36.705v-5.182" id="Line-5" stroke-linecap="square"/>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>
