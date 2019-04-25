@@ -1,45 +1,41 @@
-$color: rgb(218, 49, 113);
+// Variables
+$color-pink: rgb(218, 49, 113);
+$color-grey:  rgb(179, 179, 179);
+$color-white: #fff;
 
+//Fuentes
 @font-face {
   font-family: ProximaNova;
-  src:
-  local('ProximaNova-Regular'),
-    url(/fonts/ProximaNova/ProximaNova-Regular.otf) format('opentype');
+  src: url(/fonts/ProximaNova/ProximaNova-Regular.otf) format('opentype');
 }
 
 @font-face {
   font-family: ProximaNovaSemibold;
-  src:
-  local('ProximaNova-Semibold'),
-    url(/fonts/ProximaNovaSemibold/ProximaNova-Semibold.otf) format('opentype');
+  src: url(/fonts/ProximaNovaSemibold/ProximaNova-Semibold.otf) format('opentype');
 }
 
 @font-face {
   font-family: ProximaNovaLight;
-  src:
-  local('ProximaNova-Light'),
-    url(/fonts/ProximaNovaLight/ProximaNova-Light.otf) format('opentype');
+  src: url(/fonts/ProximaNovaLight/ProximaNova-Light.otf) format('opentype');
 }
 
 @font-face {
   font-family: ProximaNovaBold;
-  src:
-  local('ProximaNova-Bold'),
-    url(/fonts/ProximaNovaBold/ProximaNova-Bold.otf) format('opentype');
+  src: url(/fonts/ProximaNovaBold/ProximaNova-Bold.otf) format('opentype');
 }
 
+// Estilos globales
 * {
   box-sizing: border-box;
-  //margin: 20px 10px 20px 20px;
+  body {
+    margin: 100px 100px 100px 150px;
+  }
 }
 
-body {
-  margin: 100px 100px 100px 150px;
-}
-
+// Estilos del titulo
 .title {
   p {
-  color: $color;
+  color: $color-pink;
   font-family: 'ProximaNovaLight', sans-serif;
   font-size: 20px;
   margin-bottom: 5px;
@@ -56,8 +52,12 @@ body {
   }
 }
 
+.mural-size-name {
+  font-family: 'ProximaNova', sans-serif;
+}
+
 .mural-size {
-  background: white;
+  background: $color-white;
   border: solid 1px grey;
   display: flex;
   align-items: center;
@@ -72,11 +72,10 @@ body {
 .mural-size-selector {
   display: inline-flex;
   margin-bottom: 50px;
-}
-
-.p {
-  font-family: 'ProximaNovaBold';
-  margin-bottom: 0;
+  .name {
+    font-family: 'ProximaNovaBold';
+    margin-bottom: 3px;
+  }
 }
 
 .default {
@@ -89,13 +88,13 @@ body {
 .horizontal-2x {
   width: 80px;
   min-height: 40px;
-  margin: 40px auto 10px;
+  margin: 30px auto 10px;
 }
 
 .horizontal-3x {
   width: 100px;
   min-height: 40px;
-  margin: 40px auto 10px;
+  margin: 30px auto 10px;
 }
 
 .vertical-2x {
@@ -107,13 +106,13 @@ body {
 .vertical-3x {
   width: 34px;
   min-height: 64px;
-  margin: 10px auto 3px;
+  margin: 15px auto 3px;
 }
 
 .custom {
   width: 95px;
   min-height: 80px;
-  margin: 20px auto 0;
+  margin: 15px auto 0;
 }
 
 input[type="radio"] {
@@ -121,12 +120,12 @@ input[type="radio"] {
 }
 
 .selected {
-  border: 3px solid $color;
+  border: 3px solid $color-pink;
 }
 
 label {
   cursor: pointer;
-  border: 1px solid rgb(179, 179, 179);
+  border: 1px solid $color-grey;
   width: 150px;
   height: 150px;
   background: rgb(241, 241, 241);
@@ -137,25 +136,27 @@ label {
   justify-content: center;
   align-content: center;
   margin-right:30px;
+  span {
+    font-family: 'ProximaNovaLight', sans-serif;
+  }
 }
-
-
-
 
 .custom-size {
   display: flex;
   margin: 0;
-  margin-left: 10px
+  margin-left: 10px;
+  p {
+    margin-right: 50px;
+    font-size: 14px;
+  }
+  input {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid $color-grey;
+    margin-right: 15px;
+  }
 }
-
-.name-selector p {
-  padding: 5px;
-  margin-bottom: 0;
-}
-
-
-
-
 
 .input-number {
   font-size: 20px;
@@ -163,35 +164,33 @@ label {
 }
 
 .input-number:focus {
-  border: 3px solid rgb(218, 49, 113);
+  outline: none;
+  border: 3px solid $color-pink;
 }
 
+.mural-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 45px;
+  button {
+    background: $color-pink;
+    margin-top: 50px;
+    width: 150px;
+    height: 60px;
+    display: block;
+    border-radius: 5px;
+    color: $color-white;
+    font-size: 22px;
+    font-family: 'ProximaNovaSemiBld', sans-serif;
+    outline: none;
+  }
 
-.custom-size p {
-  margin-right: 50px;
-  font-size: 14px;
+  button:disabled {
+    border: 1px solid $color-grey;
+    background-color: #cccccc;
+    color: #666666;
+  }
 }
 
-.custom-size input {
-  width: 100px;
-  height: 40px;
-  border-radius: 5px;
-  border: 1px solid rgb(179, 179, 179);
-  margin-right: 15px;
-}
-
-// .button {
-//   margin-top: 50px;
-// }
-
-// button {
-//   background: rgb(218, 49, 113);
-//   width: 120px;
-//   height: 60px;
-//   display: block;
-//   border-radius: 5px;
-//   color: white;
-//   font-size: 22px;
-// }
 
 
