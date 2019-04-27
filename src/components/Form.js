@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MuralSizeBox from './MuralSizeBox';
 import CustomValues from './CustomValues';
+import Slider from "react-slick";
 
 // Defino un array de objetos que va a contener los datos de cada uno de los elementos (size_boxes)
 let size_boxes = [
@@ -88,6 +89,13 @@ class Form extends Component {
   render() {
     // guardo cada una de las propiedades de mi estado en variables para que sea mas fácil de utilizar
     const { size, customWidth, customHeight} = this.state
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 3
+    };
     return (
       // etiqueta form con el evento onSubmit que llama a la función onSubmit definida arriba
       <form onSubmit={this.onSubmit}>
@@ -103,6 +111,7 @@ class Form extends Component {
       propiedad selected comparo si el valor size es igual al que esta guardado en el estado, de esta manera me devolverá
       un booleano que posteriormente lo uso para ponerle una deterinada clase de css. En la propiedad onChange recibo la función
       onSizeChange definida arriba */}
+
         {size_boxes.map((box, index) => {
          return (
           <MuralSizeBox
@@ -116,7 +125,9 @@ class Form extends Component {
             />
          )
         })}
+
       </div>
+
       {/* con esta comparacion puedo saber si el box seleccionado es el box custom y desencadenar una funcionalidad única que tiene este box:
       dos inputs con valores personalizados por el usuario los cuales se setearan en el estado gracias a las funciones onCustomWidthChange
       y onCustomHeightChange, si no es custom el box seleccionado no se desencadena nada */}
@@ -130,10 +141,10 @@ class Form extends Component {
       ) : null}
       <div className="mural-button">
       {/* aca defino el boton que da por finalizado el formulario, este boton se habilita solo si recibe valores válidos, es decir,
-      hay algún elemento seleccionado o los valores personalizados de custom estan entre 3000 y 60000 */}
+      hay algún elemento seleccionado que no sea default o los valores personalizados de custom estan entre 3000 y 60000 */}
       <button
         type="submit"
-        disabled={size === '' || customWidth <3000
+        disabled={size === '' || size === 'default' || customWidth <3000
         || customWidth >60000 || customHeight <3000 || customHeight >60000}>
         DONE
       </button>

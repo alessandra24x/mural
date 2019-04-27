@@ -56,9 +56,19 @@ $color-white: #fff;
   font-family: 'ProximaNova', sans-serif;
 }
 
+.mural-size-selector {
+  display: inline-flex;
+  margin-bottom: 50px;
+  .name {
+    font-family: 'ProximaNovaBold';
+    margin-bottom: 3px;
+  }
+}
+
+
 .mural-size {
   background: $color-white;
-  border: solid 1px grey;
+  border: solid 1px $color-grey;
   display: flex;
   align-items: center;
   align-content: center;
@@ -66,15 +76,6 @@ $color-white: #fff;
   p, img {
     font-family: 'ProximaNova', sans-serif;
     margin: auto;
-  }
-}
-
-.mural-size-selector {
-  display: inline-flex;
-  margin-bottom: 50px;
-  .name {
-    font-family: 'ProximaNovaBold';
-    margin-bottom: 3px;
   }
 }
 
@@ -183,6 +184,7 @@ label {
     font-size: 22px;
     font-family: 'ProximaNovaSemiBld', sans-serif;
     outline: none;
+    cursor: pointer;
   }
 
   button:disabled {
