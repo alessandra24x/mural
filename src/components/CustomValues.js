@@ -27,7 +27,7 @@ class CustomValues extends Component {
     </div>
 
       {/* inputs con sus propiedades entre las que destacan la función onChange que permite cambiar el valor de cada input y el value con el valor
-      recibido a trevés de props en las variables declaradas arriba */}
+      recibido a través de props en las variables declaradas arriba */}
     <div className="custom-size value">
       <input
         type="number"

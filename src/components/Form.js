@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import MuralSizeBox from './MuralSizeBox';
 import CustomValues from './CustomValues';
-import Slider from "react-slick";
 
 // Defino un array de objetos que va a contener los datos de cada uno de los elementos (size_boxes)
 let size_boxes = [
@@ -46,7 +45,7 @@ let size_boxes = [
 
 // Creo la clase que extiende de componente con la estrcuctura standar donde defino el estado de mi aplicación
 // en dicho estado guardo el size que va a estar variando por cada elemento seleccionado.
-// tambien guardo los valores que tendrá el box custom tanto su width como height, asi se validan posteriormente
+// tambien guardo los valores que tendrá el box custom tanto su width como height.
 class Form extends Component {
   constructor(props) {
     super(props);
@@ -89,13 +88,6 @@ class Form extends Component {
   render() {
     // guardo cada una de las propiedades de mi estado en variables para que sea mas fácil de utilizar
     const { size, customWidth, customHeight} = this.state
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 3
-    };
     return (
       // etiqueta form con el evento onSubmit que llama a la función onSubmit definida arriba
       <form onSubmit={this.onSubmit}>
@@ -109,7 +101,7 @@ class Form extends Component {
       {/* con map recorro cada uno de los elementos de mi array y los retorno en el componente MuralSizeBox, esto devolverá
       un box con todas las propiedades definidas en el map por cada elemento, es decir, en este caso 6 boxes, en la
       propiedad selected comparo si el valor size es igual al que esta guardado en el estado, de esta manera me devolverá
-      un booleano que posteriormente lo uso para ponerle una deterinada clase de css. En la propiedad onChange recibo la función
+      un booleano que posteriormente lo uso para ponerle una determinada clase de css. En la propiedad onChange recibo la función
       onSizeChange definida arriba */}
 
         {size_boxes.map((box, index) => {

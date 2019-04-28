@@ -12,7 +12,7 @@ class MuralSizeBox extends Component {
         {/* si la propiedad selected es true (booleano que llega por props) entonces aplicara una clase css con ese nombre, sino no hará nada */}
         <label className={'mural-size-item ' + (selected ? 'selected' : '')} htmlFor={mySize}>
         <div className={'mural-size ' + mySize}>
-        {/* si el dato size guardado en el array coincide con el string "custom" pintará un box especifico con una imagen diferente al resto, sino mostrará
+        {/* si el box seleccionado es "custom" pintará un box especifico con una imagen diferente al resto, sino mostrará
       el texto de cada box */}
         { mySize === 'custom'
               ? <img src={CustomImg} alt="arrow icon"/>
