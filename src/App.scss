@@ -2,6 +2,7 @@
 $color-pink: rgb(218, 49, 113);
 $color-grey:  rgb(179, 179, 179);
 $color-white: #fff;
+$color-dark_grey: rgb(61, 59, 59);
 
 //Fuentes
 @font-face {
@@ -44,10 +45,10 @@ $color-white: #fff;
     font-size: 45px;
     margin-top: 0;
     margin-bottom: 10px;
-    color: rgb(61, 59, 59);
+    color: $color-dark_grey
   }
   hr {
-    border: solid 3px rgb(61, 59, 59);
+    border: solid 3px $color-dark_grey;
     margin-bottom: 50px;
   }
 }
